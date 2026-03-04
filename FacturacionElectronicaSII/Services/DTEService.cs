@@ -171,6 +171,86 @@ namespace FacturacionElectronicaSII.Services
             }
         }
 
+        public async Task<EmitirSetResponse> EmitirSetAsync(List<EmitirDTERequest> requests)
+        {
+            var response = new EmitirSetResponse();
+            var documentosFirmados = new List<(string xmlDTE, int tipoDTE)>();
+
+            try
+            {
+                _logger.LogInformation("Iniciando emisión de SET con {Count} DTEs", requests.Count);
+
+                var rutEmisor = _configuration["FacturacionElectronica:Emisor:RUT"] ?? "";
+                var rutEnvia = _configuration["FacturacionElectronica:Certificado:RUT"] ?? rutEmisor;
+                var rutReceptor = _configuration["SII:Certificacion:RutReceptor"] ?? "60803000-K";
+                var fechaResol = _configuration["FacturacionElectronica:Resolucion:Fecha"] ?? "2025-12-03";
+                var nroResol = _configuration["FacturacionElectronica:Resolucion:Numero"] ?? "0";
+
+                // Generar cada DTE individualmente (sin enviar al SII)
+                foreach (var request in requests)
+                {
+                    var errores = ValidarRequest(request);
+                    if (errores.Any())
+                    {
+                        response.Errores.AddRange(errores);
+                        response.Mensaje = "Errores de validación";
+                        return response;
+                    }
+
+                    var folio = await _cafService.ObtenerFolioDisponibleAsync(request.TipoDTE);
+                    var caf = await _cafService.ObtenerCAFAsync(request.TipoDTE);
+                    if (caf == null) { response.Errores.Add($"No hay CAF para tipo {request.TipoDTE}"); return response; }
+
+                    var totales = CalcularTotales(request.Detalles, request.DescuentoGlobalPorcentaje);
+                    var documento = ConstruirDocumentoTributario(request, folio, totales);
+                    var ted = _tedService.GenerarTED(documento, caf);
+                    var xmlDTE = _xmlBuilderService.ConstruirXMLDTE(documento, ted);
+                    var xmlDTEFirmado = _firmaService.FirmarDTE(xmlDTE, $"F{folio}T{request.TipoDTE}");
+
+                    documentosFirmados.Add((xmlDTEFirmado, request.TipoDTE));
+                    response.Folios.Add($"T{request.TipoDTE}F{folio}");
+                    await _cafService.MarcarFolioUsadoAsync(request.TipoDTE, folio);
+                    _logger.LogInformation("DTE tipo {Tipo} folio {Folio} generado", request.TipoDTE, folio);
+                }
+
+                // Construir UN solo EnvioDTE con todos los DTEs
+                var xmlEnvioDTE = _xmlBuilderService.ConstruirXMLEnvioDTEMultiple(documentosFirmados, rutEmisor, rutEnvia, rutReceptor, fechaResol, nroResol);
+                var xmlEnvioDTEFirmado = _firmaService.FirmarEnvioDTE(xmlEnvioDTE);
+
+                // Guardar XML del set
+                var carpetaXmls = Path.Combine(Directory.GetCurrentDirectory(), _configuration["FacturacionElectronica:Rutas:XMLs"] ?? "./Data/XMLs");
+                Directory.CreateDirectory(carpetaXmls);
+                var rutaArchivo = Path.Combine(carpetaXmls, $"SetBasico_{DateTime.Now:yyyyMMdd_HHmmss}.xml");
+                await File.WriteAllTextAsync(rutaArchivo, xmlEnvioDTEFirmado, new System.Text.UTF8Encoding(false));
+
+                // Enviar al SII
+                var semilla = await _siiService.ObtenerSemillaAsync();
+                var token = await _siiService.ObtenerTokenAsync(semilla);
+                var envioResponse = await _siiService.EnviarDTEAsync(xmlEnvioDTEFirmado, token);
+
+                if (!envioResponse.Exito)
+                {
+                    response.Errores.AddRange(envioResponse.Errores);
+                    response.Mensaje = "Error al enviar al SII: " + envioResponse.Mensaje;
+                    return response;
+                }
+
+                response.Exito = true;
+                response.TrackID = envioResponse.TrackID;
+                response.CantidadDTEs = documentosFirmados.Count;
+                response.Mensaje = $"SET enviado exitosamente. TrackID: {envioResponse.TrackID}";
+                _logger.LogInformation("SET enviado. TrackID: {TrackID}, DTEs: {Count}", envioResponse.TrackID, documentosFirmados.Count);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al emitir SET");
+                response.Errores.Add($"Error interno: {ex.Message}");
+                response.Mensaje = "Error al procesar el SET";
+                return response;
+            }
+        }
+
         public async Task<EstadoEnvioResponse> ConsultarEstadoAsync(string trackId)
         {
             _logger.LogInformation("Consultando estado para TrackID: {TrackID}", trackId);

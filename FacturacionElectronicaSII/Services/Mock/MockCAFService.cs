@@ -81,6 +81,8 @@ namespace FacturacionElectronicaSII.Services.Mock
             throw new InvalidOperationException($"No hay folios disponibles para tipo DTE {tipoDTE}");
         }
 
+        public Task<int> VerProximoFolioAsync(int tipoDTE) => ObtenerFolioDisponibleAsync(tipoDTE);
+
         public Task<CAFData?> ObtenerCAFAsync(int tipoDTE)
         {
             _logger.LogInformation("Mock: Obteniendo CAF para tipo DTE {TipoDTE}", tipoDTE);

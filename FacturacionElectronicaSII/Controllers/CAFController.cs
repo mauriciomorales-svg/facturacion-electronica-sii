@@ -110,6 +110,16 @@ namespace FacturacionElectronicaSII.Controllers
         }
 
         /// <summary>
+        /// Ver el próximo folio disponible sin consumirlo (para pre-calcular referencias en SET)
+        /// </summary>
+        [HttpGet("proximo-folio/{tipoDTE}")]
+        public async Task<ActionResult<int>> VerProximoFolio(int tipoDTE)
+        {
+            var folio = await _cafService.VerProximoFolioAsync(tipoDTE);
+            return Ok(folio);
+        }
+
+        /// <summary>
         /// Obtiene la cantidad de folios disponibles para un tipo de DTE
         /// </summary>
         /// <param name="tipoDTE">Tipo de DTE (33, 39, 61, 56)</param>

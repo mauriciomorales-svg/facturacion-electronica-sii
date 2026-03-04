@@ -224,6 +224,56 @@ namespace FacturacionElectronicaSII.Services
             return xmlFormateado;
         }
 
+        public string ConstruirXMLEnvioDTEMultiple(List<(string xmlDTE, int tipoDTE)> documentos, string rutEmisor, string rutEnvia, string rutReceptor, string fechaResol, string nroResol)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
+            sb.AppendLine("<EnvioDTE xmlns=\"http://www.sii.cl/SiiDte\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.sii.cl/SiiDte EnvioDTE_v10.xsd\" version=\"1.0\">");
+            sb.AppendLine("  <SetDTE ID=\"SetDoc\">");
+            sb.AppendLine("    <Caratula version=\"1.0\">");
+            sb.AppendLine($"      <RutEmisor>{rutEmisor}</RutEmisor>");
+            sb.AppendLine($"      <RutEnvia>{rutEnvia}</RutEnvia>");
+            sb.AppendLine($"      <RutReceptor>{rutReceptor}</RutReceptor>");
+            sb.AppendLine($"      <FchResol>{fechaResol}</FchResol>");
+            sb.AppendLine($"      <NroResol>{nroResol}</NroResol>");
+
+            DateTime fechaChile;
+            try { fechaChile = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("Pacific SA Standard Time")); }
+            catch { fechaChile = DateTime.UtcNow.AddHours(-3); }
+            sb.AppendLine($"      <TmstFirmaEnv>{fechaChile:yyyy-MM-ddTHH:mm:ss}</TmstFirmaEnv>");
+
+            // SubTotDTE por tipo de documento
+            var porTipo = documentos.GroupBy(d => d.tipoDTE).OrderBy(g => g.Key);
+            foreach (var grupo in porTipo)
+            {
+                sb.AppendLine("      <SubTotDTE>");
+                sb.AppendLine($"        <TpoDTE>{grupo.Key}</TpoDTE>");
+                sb.AppendLine($"        <NroDTE>{grupo.Count()}</NroDTE>");
+                sb.AppendLine("      </SubTotDTE>");
+            }
+            sb.AppendLine("    </Caratula>");
+
+            // Insertar todos los DTEs firmados
+            foreach (var (xmlDTE, _) in documentos)
+            {
+                string dteSinDeclaracion = xmlDTE;
+                if (dteSinDeclaracion.TrimStart().StartsWith("<?xml"))
+                {
+                    int fin = dteSinDeclaracion.IndexOf("?>") + 2;
+                    dteSinDeclaracion = dteSinDeclaracion.Substring(fin).TrimStart();
+                }
+                foreach (var line in dteSinDeclaracion.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None))
+                {
+                    if (!string.IsNullOrWhiteSpace(line))
+                        sb.AppendLine("    " + line.TrimStart());
+                }
+            }
+
+            sb.AppendLine("  </SetDTE>");
+            sb.AppendLine("</EnvioDTE>");
+            return sb.ToString();
+        }
+
         private XElement ConstruirEncabezado(DocumentoTributario documento)
         {
             return new XElement(XName.Get("Encabezado", SII_NAMESPACE),

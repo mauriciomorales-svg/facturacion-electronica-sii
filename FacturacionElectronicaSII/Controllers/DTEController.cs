@@ -118,6 +118,25 @@ namespace FacturacionElectronicaSII.Controllers
         }
 
         /// <summary>
+        /// Emite un SET completo de DTEs en un único EnvioDTE al SII
+        /// </summary>
+        [HttpPost("emitir-set")]
+        [ProducesResponseType(typeof(EmitirSetResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<EmitirSetResponse>> EmitirSet([FromBody] List<EmitirDTERequest> requests)
+        {
+            if (requests == null || !requests.Any())
+                return BadRequest("Se requiere al menos un DTE");
+
+            var response = await _dteService.EmitirSetAsync(requests);
+
+            if (!response.Exito)
+                return BadRequest(response);
+
+            return Ok(response);
+        }
+
+        /// <summary>
         /// Consulta el estado de un envío al SII
         /// </summary>
         /// <param name="trackId">TrackID del envío</param>

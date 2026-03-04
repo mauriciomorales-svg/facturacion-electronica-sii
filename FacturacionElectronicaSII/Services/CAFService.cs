@@ -119,6 +119,11 @@ namespace FacturacionElectronicaSII.Services
             throw new InvalidOperationException($"No hay folios disponibles para tipo DTE {tipoDTE}");
         }
 
+        public async Task<int> VerProximoFolioAsync(int tipoDTE)
+        {
+            return await ObtenerFolioDisponibleAsync(tipoDTE);
+        }
+
         public async Task<CAFData?> ObtenerCAFAsync(int tipoDTE)
         {
             _logger.LogInformation("Obteniendo CAF para tipo DTE {TipoDTE}", tipoDTE);

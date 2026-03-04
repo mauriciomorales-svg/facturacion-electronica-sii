@@ -9,5 +9,6 @@ namespace FacturacionElectronicaSII.Interfaces
     {
         string ConstruirXMLDTE(DocumentoTributario documento, string ted);
         string ConstruirXMLEnvioDTE(string xmlDTE, string rutEmisor, string rutEnvia, string rutReceptor, string fechaResol = "2021-03-12", string nroResol = "0", int cantidadDTE = 1);
+        string ConstruirXMLEnvioDTEMultiple(List<(string xmlDTE, int tipoDTE)> documentos, string rutEmisor, string rutEnvia, string rutReceptor, string fechaResol, string nroResol);
     }
 }
