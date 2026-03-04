@@ -1,0 +1,15 @@
+{
+  "tipoDTE": 33,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS"
+  },
+  "detalles": [
+    {
+      "nombre": "Producto prueba",
+      "cantidad": 1,
+      "precioUnitario": 1000
+    }
+  ],
+  "formaPago": 1
+}

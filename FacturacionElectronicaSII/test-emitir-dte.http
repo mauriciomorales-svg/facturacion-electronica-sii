@@ -1,0 +1,49 @@
+### Emitir DTE Factura (33) - Certificación
+POST http://localhost:5030/api/DTE/emitir
+Content-Type: application/json
+
+{
+  "tipoDTE": 33,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS",
+    "giro": "Servicios públicos",
+    "direccion": "Teatinos 120",
+    "comuna": "Santiago",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "codigo": "PROD001",
+      "nombre": "Producto de prueba certificación",
+      "cantidad": 1,
+      "precioUnitario": 10000
+    }
+  ],
+  "formaPago": 1
+}
+
+### Emitir DTE Boleta (39) - Certificación
+POST http://localhost:5030/api/DTE/emitir
+Content-Type: application/json
+
+{
+  "tipoDTE": 39,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS",
+    "giro": "Servicios públicos",
+    "direccion": "Teatinos 120",
+    "comuna": "Santiago",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "codigo": "PROD002",
+      "nombre": "Producto boleta prueba",
+      "cantidad": 2,
+      "precioUnitario": 5000
+    }
+  ],
+  "formaPago": 1
+}

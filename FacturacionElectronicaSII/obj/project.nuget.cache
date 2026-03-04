@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "dgSpecHash": "SN0HMg4tUmk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "C:\\Users\\ComercioIsabel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "El paquete \"BouncyCastle.Cryptography\" 2.2.1 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv",
+      "projectPath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "libraryId": "BouncyCastle.Cryptography",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "El paquete \"BouncyCastle.Cryptography\" 2.2.1 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-m44j-cfrm-g8qc",
+      "projectPath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "libraryId": "BouncyCastle.Cryptography",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "El paquete \"BouncyCastle.Cryptography\" 2.2.1 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-v435-xc8x-wvr9",
+      "projectPath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+      "libraryId": "BouncyCastle.Cryptography",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+### Prueba de Emisión de DTE en Certificación
+### Asegúrate de que el servicio esté ejecutándose en https://localhost:7295
+
+### 1. Emitir Factura (Tipo 33)
+POST https://localhost:7295/api/dte/emitir
+Content-Type: application/json
+
+{
+  "tipoDTE": 33,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS",
+    "giro": "Servicios públicos",
+    "direccion": "Teatinos 120",
+    "comuna": "Santiago",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "codigo": "PROD001",
+      "nombre": "Producto de prueba certificación",
+      "cantidad": 1,
+      "precioUnitario": 10000
+    }
+  ],
+  "formaPago": 1
+}
+
+### 2. Consultar Folios Disponibles para Factura
+GET https://localhost:7295/api/caf/folios-disponibles/33
+
+### 3. Consultar Estado de Envío (reemplazar {trackID} con el recibido)
+GET https://localhost:7295/api/estado/{trackID}
+
+### 4. Emitir Boleta (Tipo 39)
+POST https://localhost:7295/api/dte/emitir
+Content-Type: application/json
+
+{
+  "tipoDTE": 39,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS",
+    "direccion": "Teatinos 120",
+    "comuna": "Santiago",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "nombre": "Servicio de prueba",
+      "cantidad": 1,
+      "precioUnitario": 5000
+    }
+  ]
+}

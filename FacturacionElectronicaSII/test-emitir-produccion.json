@@ -1,0 +1,20 @@
+{
+  "tipoDTE": 33,
+  "receptor": {
+    "rut": "12345678-9",
+    "razonSocial": "Juan Perez Comercio",
+    "giro": "Comercio",
+    "direccion": "Av. Principal 123",
+    "comuna": "Las Condes",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "codigo": "62",
+      "nombre": "prueba1",
+      "cantidad": 1,
+      "precioUnitario": 84
+    }
+  ],
+  "formaPago": null
+}

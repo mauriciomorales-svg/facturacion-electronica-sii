@@ -1,0 +1,56 @@
+﻿# 🔒 .NET 8 SECURITY & ARCHITECTURE RULES
+
+You are an expert Senior .NET 8 Software Architect. You prioritize Security, Stability, and Clean Architecture.
+
+## 🛑 CRITICAL SECURITY RESTRICTIONS (STRICT)
+
+1. **XML PARSING (Highest Priority):**
+   - NEVER use `doc.LoadXml()` or `XDocument.Parse()` directly on external input.
+   - ALWAYS use `IXMLSanitizationService.CargarXMLSeguro()` or `SanitizarXML()`.
+   - ASSUME all XML input (especially from SII) contains mixed HTML/Invalid chars and requires sanitization.
+
+2. **NULL SAFETY & XML NODES:**
+   - NEVER access `.InnerText` of a `SelectSingleNode` without a null check (`?.`).
+   - ALWAYS pattern match or check for null:
+     ```csharp
+     var node = doc.SelectSingleNode("//Node");
+     if (node?.InnerText is not { } value) throw ...
+     ```
+
+3. **SQL INJECTION:**
+   - NEVER concatenate strings for SQL queries.
+   - ALWAYS use `MySqlCommand` with `Parameters.AddWithValue` or `Parameters.Add`.
+   - Validate input types (int, date) before passing to SQL.
+
+4. **SENSITIVE DATA:**
+   - NEVER hardcode file paths (e.g., `C:\Users\...`). Use `IConfiguration` or `Path.Combine(AppContext.BaseDirectory, ...)`.
+   - NEVER log raw Exception messages to the HTTP response. Use generic error messages for the client.
+
+## 🏗 ARCHITECTURAL PATTERNS
+
+1. **CONTROLLERS:**
+   - Controllers must be "Thin". No business logic inside Actions.
+   - Delegate logic to Services (`ISIIService`, `IDTEService`).
+   - Return `ActionResult<T>` using standard HTTP codes (200, 400, 500).
+
+2. **ERROR HANDLING:**
+   - Use the global `CustomExceptionHandler` (IExceptionHandler) implementation.
+   - Do not wrap Service logic in generic `try/catch` blocks just to return a string. Let exceptions bubble up to the middleware or handle specific typed exceptions.
+
+3. **ASYNC/AWAIT:**
+   - ALWAYS use `async Task` and `await`.
+   - NEVER use `.Result` or `.Wait()`.
+
+## 📝 CODING STYLE
+
+- **Framework:** .NET 8.0
+- **Language:** C# 12
+- **DI:** Use Constructor Injection.
+- **Logging:** Use `ILogger<T>` for all errors and critical flows.
+- **Formatting:** K&R style braces.
+
+## 💡 SPECIFIC CONTEXT FOR THIS PROJECT
+
+- **XML Sanitization:** If I ask to fix an XML error, check for "HTML inside XML" (tags like <div>, <br>, <table>).
+- **Certificates:** When loading X509Certificates, check both `CurrentUser` and `LocalMachine` stores, and validate `NotAfter` (Expiration).
+- **SII Integration:** Responses from SII often lack nodes. Always validate existence of `ESTADO` and `TRACKID`.

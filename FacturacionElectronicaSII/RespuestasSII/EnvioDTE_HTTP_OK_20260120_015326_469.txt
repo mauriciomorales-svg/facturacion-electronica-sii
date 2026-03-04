@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>RESULTADO DEL UPLOAD DE DOCUMENTOS TRIBUTARIOS ELECTRONICOS</title>
+
+<script type="text/javascript" src="/ruxitagentjs_ICA7NVfghqrux_10327251022105625.js" data-dtconfig="rid=RID_1838275272|rpid=-2018050022|domain=sii.cl|reportUrl=/rb_bf05726fov|app=ea7c4b59f27d43eb|cssm=s|owasp=1|featureHash=ICA7NVfghqrux|rdnt=1|uxrgce=1|cuc=3hq5c4eu|mel=100000|expw=1|md=mdcc1=a.MainView strong,mdcc2=cNETSCAPE_LIVEWIRE.rut|lastModification=1767812281358|tp=500,50,0|srbbv=2|agentUri=/ruxitagentjs_ICA7NVfghqrux_10327251022105625.js"></script></head>
+
+<body link="003399" >
+
+<div align="center"><center>
+
+<table width="630">
+  <tr>
+    <td vAlign="top"><font class="titulo" face="Arial" size="4" color="#000000"><strong>
+      RESULTADO DEL UPLOAD DE DOCUMENTOS TRIBUTARIOS ELECTRONICOS
+      </strong></font>
+    </td>
+  </tr>
+  <tr>  
+    <td vAlign="middle" align="center" height="40">
+      <hr>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<table border="0" width="700">
+  <tr>
+    <td><small>
+      <font face="Arial"> 
+      LA EMPRESA INGRESADA NO ESTA AUTORIZADA A REALIZAR      
+      ENVIOS DE ARCHIVOS DE DOCUMENTOS ELECTRONICOS.
+      </font></small>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+<a href="#" onclick="window.print()">Imprimir</a>
+<a href="#" onclick="window.close()">Cerrar</a>
+
+</center>
+</div>
+</body>
+</html>
+

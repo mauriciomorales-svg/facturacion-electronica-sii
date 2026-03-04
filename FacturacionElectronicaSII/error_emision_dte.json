@@ -1,0 +1,1 @@
+﻿{"exito":false,"mensaje":"Error al procesar la emisión","tipoDTE":33,"folio":62,"fechaEmision":"0001-01-01T00:00:00","montoNeto":10000,"iva":1900,"montoTotal":11900,"trackID":null,"estadoSII":null,"timbreBase64":null,"xmlBase64":null,"errores":["Error interno: No se pudo parsear la respuesta del SII después de limpieza: There are multiple root elements. Line 11, position 2."]}

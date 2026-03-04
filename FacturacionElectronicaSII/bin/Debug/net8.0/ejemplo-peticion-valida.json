@@ -1,0 +1,21 @@
+{
+  "tipoDTE": 33,
+  "receptor": {
+    "rut": "60803000-K",
+    "razonSocial": "SERVICIO DE IMPUESTOS INTERNOS",
+    "giro": "Servicios públicos",
+    "direccion": "Teatinos 120",
+    "comuna": "Santiago",
+    "ciudad": "Santiago"
+  },
+  "detalles": [
+    {
+      "codigo": "PROD001",
+      "nombre": "Producto de prueba certificación",
+      "cantidad": 1,
+      "precioUnitario": 10000,
+      "descuentoPorcentaje": 0
+    }
+  ],
+  "formaPago": 1
+}

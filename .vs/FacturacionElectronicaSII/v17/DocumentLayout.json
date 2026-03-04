@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3A30920-8E7C-4C90-84CA-900D45394ECC}|FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj|c:\\users\\comercioisabel\\source\\repos\\facturacionelectronicasii\\facturacionelectronicasii\\regla1.cursorrules||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B3A30920-8E7C-4C90-84CA-900D45394ECC}|FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj|solutionrelative:facturacionelectronicasii\\regla1.cursorrules||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3A30920-8E7C-4C90-84CA-900D45394ECC}|FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj|c:\\users\\comercioisabel\\source\\repos\\facturacionelectronicasii\\facturacionelectronicasii\\facturacionelectronicasii.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B3A30920-8E7C-4C90-84CA-900D45394ECC}|FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj|solutionrelative:facturacionelectronicasii\\facturacionelectronicasii.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ComercioIsabel\\Downloads\\FuncionesComunes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 221,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "regla1.cursorrules",
+              "DocumentMoniker": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\regla1.cursorrules",
+              "RelativeDocumentMoniker": "FacturacionElectronicaSII\\regla1.cursorrules",
+              "ToolTip": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\regla1.cursorrules",
+              "RelativeToolTip": "FacturacionElectronicaSII\\regla1.cursorrules",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-20T03:25:49.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FacturacionElectronicaSII.csproj",
+              "DocumentMoniker": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+              "RelativeDocumentMoniker": "FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+              "ToolTip": "C:\\Users\\ComercioIsabel\\source\\repos\\FacturacionElectronicaSII\\FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+              "RelativeToolTip": "FacturacionElectronicaSII\\FacturacionElectronicaSII.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-19T12:53:20.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FuncionesComunes.cs",
+              "DocumentMoniker": "C:\\Users\\ComercioIsabel\\Downloads\\FuncionesComunes.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\FuncionesComunes.cs",
+              "ToolTip": "C:\\Users\\ComercioIsabel\\Downloads\\FuncionesComunes.cs",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\FuncionesComunes.cs",
+              "ViewState": "AgIAABECAAAAAAAAAADwvzcCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-19T08:09:45.595Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

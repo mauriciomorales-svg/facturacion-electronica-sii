@@ -1,0 +1,42 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+
+# Build outputs
+*.exe
+*.dll
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Archivos generados por el sistema (no subir al repo)
+RespuestasSII/
+DocumentosEnviadosSII/
+Data/XMLs/
+Data/PDFs/
+Data/CAFs/
+
+# Certificados y datos sensibles
+*.pfx
+*.p12
+*.cer
+
+# Archivos zip grandes
+*.zip
+
+# Documentación de trabajo generada automáticamente
+../*.md
+../scripts/
+../SET_BASICO_GENERADO/
+../*.ps1
+../*.html
+../*.txt
+../*.sql

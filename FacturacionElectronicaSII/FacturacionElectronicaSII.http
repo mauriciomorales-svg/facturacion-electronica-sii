@@ -1,0 +1,6 @@
+@FacturacionElectronicaSII_HostAddress = http://localhost:5030
+
+GET {{FacturacionElectronicaSII_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,203 @@
+﻿===================================================================
+           INFORME DE RESPUESTAS DEL SII
+===================================================================
+Fecha de generacion: 2026-01-20 01:25:58
+Total de archivos: 5
+Directorio: C:\Users\ComercioIsabel\source\repos\FacturacionElectronicaSII\FacturacionElectronicaSII\RespuestasSII
+
+===================================================================
+RESUMEN POR TIPO DE OPERACION
+===================================================================
+EnvioDTE            : 1 archivo(s)
+  Ultimo archivo: EnvioDTE_HTTP_OK_20260120_012554_047.txt - 01/20/2026 01:25:54
+Semilla             : 3 archivo(s)
+  Ultimo archivo: Semilla_20260120_012553_824.txt - 01/20/2026 01:25:53
+Token               : 1 archivo(s)
+  Ultimo archivo: Token_HTTP_OK_20260120_012553_941.txt - 01/20/2026 01:25:53
+
+===================================================================
+DETALLE DE RESPUESTAS
+===================================================================
+
+-------------------------------------------------------------------
+[1] EnvioDTE_HTTP_OK_20260120_012554_047.txt
+-------------------------------------------------------------------
+Fecha/Hora:     2026-01-20 01:25:54.048
+TamaÃ±o:         0.99 KB
+Lineas:         76
+Tipo:           EnvioDTE
+
+CONTENIDO COMPLETO:
+-------------------------------------------------------------------
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>RESULTADO DEL UPLOAD DE DOCUMENTOS TRIBUTARIOS ELECTRONICOS</title>
+
+</head>
+
+<body link="003399" >
+
+<div align="center"><center>
+
+<table width="630">
+  <tr>
+    <td vAlign="top"><font class="titulo" face="Arial" size="4" color="#000000"><strong>
+      RESULTADO DEL UPLOAD DE DOCUMENTOS TRIBUTARIOS ELECTRONICOS
+      </strong></font>
+    </td>
+  </tr>
+  <tr>  
+    <td vAlign="middle" align="center" height="40">
+      <hr>
+    </td>
+  </tr>
+</table>
+
+<p><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<table border="0" width="700">
+  <tr>
+    <td><small>
+      <font face="Arial"> 
+      LA EMPRESA INGRESADA NO ESTA AUTORIZADA A REALIZAR      
+      ENVIOS DE ARCHIVOS DE DOCUMENTOS ELECTRONICOS.
+      </font></small>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+
+<a href="#" onclick="window.print()">Imprimir</a>
+<a href="#" onclick="window.close()">Cerrar</a>
+
+</center>
+</div>
+</body>
+</html>
+
+
+
+===================================================================
+
+-------------------------------------------------------------------
+[2] Token_HTTP_OK_20260120_012553_941.txt
+-------------------------------------------------------------------
+Fecha/Hora:     2026-01-20 01:25:53.944
+TamaÃ±o:         0.82 KB
+Lineas:         8
+Tipo:           Token
+
+CONTENIDO COMPLETO:
+-------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body>
+  <ns1:getTokenResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://DefaultNamespace">
+   <ns1:getTokenReturn xsi:type="xsd:string">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SII:RESPUESTA xmlns:SII=&quot;http://www.sii.cl/XMLSchema&quot;&gt;&lt;SII:RESP_BODY&gt;&lt;TOKEN&gt;6DQXFMZ7AZ8H5&lt;/TOKEN&gt;&lt;/SII:RESP_BODY&gt;&lt;SII:RESP_HDR&gt;&lt;ESTADO&gt;00&lt;/ESTADO&gt;&lt;GLOSA&gt;Token Creado&lt;/GLOSA&gt;&lt;/SII:RESP_HDR&gt;&lt;/SII:RESPUESTA&gt;</ns1:getTokenReturn>
+  </ns1:getTokenResponse>
+ </soapenv:Body>
+</soapenv:Envelope>
+
+===================================================================
+
+-------------------------------------------------------------------
+[3] Semilla_20260120_012553_824.txt
+-------------------------------------------------------------------
+Fecha/Hora:     2026-01-20 01:25:53.827
+TamaÃ±o:         0.78 KB
+Lineas:         8
+Tipo:           Semilla
+
+CONTENIDO COMPLETO:
+-------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body>
+  <ns1:getSeedResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://DefaultNamespace">
+   <ns1:getSeedReturn xsi:type="xsd:string">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SII:RESPUESTA xmlns:SII=&quot;http://www.sii.cl/XMLSchema&quot;&gt;&lt;SII:RESP_BODY&gt;&lt;SEMILLA&gt;155074266016&lt;/SEMILLA&gt;&lt;/SII:RESP_BODY&gt;&lt;SII:RESP_HDR&gt;&lt;ESTADO&gt;00&lt;/ESTADO&gt;&lt;/SII:RESP_HDR&gt;&lt;/SII:RESPUESTA&gt;</ns1:getSeedReturn>
+  </ns1:getSeedResponse>
+ </soapenv:Body>
+</soapenv:Envelope>
+
+===================================================================
+
+-------------------------------------------------------------------
+[4] Semilla_20260120_012550_504.txt
+-------------------------------------------------------------------
+Fecha/Hora:     2026-01-20 01:25:50.506
+TamaÃ±o:         0.78 KB
+Lineas:         8
+Tipo:           Semilla
+
+CONTENIDO COMPLETO:
+-------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body>
+  <ns1:getSeedResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://DefaultNamespace">
+   <ns1:getSeedReturn xsi:type="xsd:string">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SII:RESPUESTA xmlns:SII=&quot;http://www.sii.cl/XMLSchema&quot;&gt;&lt;SII:RESP_BODY&gt;&lt;SEMILLA&gt;155074264484&lt;/SEMILLA&gt;&lt;/SII:RESP_BODY&gt;&lt;SII:RESP_HDR&gt;&lt;ESTADO&gt;00&lt;/ESTADO&gt;&lt;/SII:RESP_HDR&gt;&lt;/SII:RESPUESTA&gt;</ns1:getSeedReturn>
+  </ns1:getSeedResponse>
+ </soapenv:Body>
+</soapenv:Envelope>
+
+===================================================================
+
+-------------------------------------------------------------------
+[5] Semilla_20260120_012534_685.txt
+-------------------------------------------------------------------
+Fecha/Hora:     2026-01-20 01:25:34.685
+TamaÃ±o:         0.78 KB
+Lineas:         8
+Tipo:           Semilla
+
+CONTENIDO COMPLETO:
+-------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body>
+  <ns1:getSeedResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://DefaultNamespace">
+   <ns1:getSeedReturn xsi:type="xsd:string">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;SII:RESPUESTA xmlns:SII=&quot;http://www.sii.cl/XMLSchema&quot;&gt;&lt;SII:RESP_BODY&gt;&lt;SEMILLA&gt;155074257528&lt;/SEMILLA&gt;&lt;/SII:RESP_BODY&gt;&lt;SII:RESP_HDR&gt;&lt;ESTADO&gt;00&lt;/ESTADO&gt;&lt;/SII:RESP_HDR&gt;&lt;/SII:RESPUESTA&gt;</ns1:getSeedReturn>
+  </ns1:getSeedResponse>
+ </soapenv:Body>
+</soapenv:Envelope>
+
+===================================================================
+
+===================================================================
+ANALISIS DE RESPUESTAS
+===================================================================
+
+Respuestas exitosas: 3
+Respuestas con error: 0
+
+Mensajes de error encontrados:
+
